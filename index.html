@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cabby Tours — Sri Lanka</title>
+  <link rel="stylesheet" href="source/css/style.css" />
+  <link rel="icon" href="source/img/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <img src="source/img/logo.png" alt="Cabby Tours Logo" />
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 26 Q20 12 28 26" stroke="currentColor" stroke-width="2" fill="none"/>
+            <circle cx="20" cy="15" r="3" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">Cabby</span>
+          <span class="logo-sub">TOURS</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="#hero" data-i18n="nav.home">Home</a></li>
+          <li><a href="#services" data-i18n="nav.services">Our Services</a></li>
+          <li><a href="#tours" data-i18n="nav.tours">Tours</a></li>
+          <li><a href="#about" data-i18n="nav.about">About Us</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <a href="#tours" class="btn-plan">
+        <span data-i18n="nav.planBtn">Plan Your Tour</span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO CAROUSEL ===== -->
+  <section class="carousel" id="hero">
+    <div class="carousel-track" id="carousel-track">
+
+      <!-- Slide 1 -->
+      <div class="slide slide-1">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <p class="slide-eyebrow" data-i18n="slide1.eyebrow">Discover the Pearl of the Indian Ocean</p>
+          <h1 class="slide-title" data-i18n="slide1.title">Where Every<br /><em>Journey</em> Becomes<br />a Story</h1>
+          <p class="slide-desc" data-i18n="slide1.desc">Sri Lanka's emerald landscapes, ancient temples, and golden shores await. Let Cabby Tours craft an unforgettable adventure tailored just for you.</p>
+          <a href="#tours" class="btn-hero">
+            <span data-i18n="slide1.btn">View Our Tours</span>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="slide-badge">
+          <span>Sri Lanka</span>
+          <strong>2025</strong>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide slide-2">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <p class="slide-eyebrow" data-i18n="slide2.eyebrow">Breathtaking Landscapes Await</p>
+          <h1 class="slide-title" data-i18n="slide2.title">Ancient Wonders,<br /><em>Timeless</em><br />Memories</h1>
+          <p class="slide-desc" data-i18n="slide2.desc">From the mist-shrouded hills of Ella to the ancient rock fortress of Sigiriya — explore UNESCO World Heritage Sites and hidden natural gems.</p>
+          <a href="#tours" class="btn-hero">
+            <span data-i18n="slide2.btn">View Our Tours</span>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="slide-badge">
+          <span>Sri Lanka</span>
+          <strong>2025</strong>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <div class="carousel-controls">
+      <button class="carousel-btn prev" id="prev-btn" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="carousel-dots" id="carousel-dots">
+        <button class="dot active" data-index="0"></button>
+        <button class="dot" data-index="1"></button>
+      </div>
+      <button class="carousel-btn next" id="next-btn" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="carousel-progress">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  </section>
+
+  <!-- ===== WHO WE ARE ===== -->
+  <section class="who-we-are" id="about">
+
+    <!-- Decorative top wave -->
+    <div class="wwa-wave-top">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,0 L0,0 Z" fill="#fdfcf8"/>
+      </svg>
+    </div>
+
+    <!-- Floating background leaves -->
+    <div class="wwa-bg-decor" aria-hidden="true">
+      <span class="leaf leaf-1">🌿</span>
+      <span class="leaf leaf-2">🌿</span>
+      <span class="leaf leaf-3">🌿</span>
+    </div>
+
+    <div class="wwa-container">
+
+      <!-- ── Left: Image Collage ── -->
+      <div class="wwa-images" data-reveal="left">
+        <div class="wwa-img-main">
+          <img
+            src="source/img/about/sigiriya.jpg"
+            alt="Sigiriya Rock Fortress, Sri Lanka"
+            loading="lazy"
+          />
+          <div class="wwa-img-label">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
+            <span>Sigiriya, Sri Lanka</span>
+          </div>
+        </div>
+
+        <div class="wwa-img-secondary">
+          <img
+            src="source/img/about/tea.jpg"
+            alt="Tea plantation hills in Nuwara Eliya"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="wwa-img-tertiary">
+          <img
+            src="source/img/about/tuk.jpg"
+            alt="Traditional Sri Lankan tuk tuk"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Floating stat card -->
+        <div class="wwa-stat-card wwa-stat-1">
+          <strong>12+</strong>
+          <span>Years of Experience</span>
+        </div>
+
+        <div class="wwa-stat-card wwa-stat-2">
+          <strong>4,800+</strong>
+          <span>Happy Travellers</span>
+        </div>
+      </div>
+
+      <!-- ── Right: Content ── -->
+      <div class="wwa-content" data-reveal="right">
+
+        <div class="wwa-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span data-i18n="about.eyebrow">Who We Are</span>
+        </div>
+
+        <h2 class="wwa-heading" data-i18n="about.heading">
+          Your Trusted Local<br />Guides to <em>Sri Lanka's</em><br />Hidden Wonders
+        </h2>
+
+        <p class="wwa-lead" data-i18n="about.lead">
+          Founded in Colombo over a decade ago, Cabby Tours was born from a simple belief — that the best way to experience Sri Lanka is through the eyes of someone who truly loves it.
+        </p>
+
+        <p class="wwa-body" data-i18n="about.body">
+          We are a team of passionate local experts, drivers, and storytellers who know every mountain trail, every hidden beach, and every family-run restaurant worth stopping at. We don't just take you to the destinations — we take you into the heart of the island.
+        </p>
+
+        <!-- Three pillars -->
+        <div class="wwa-pillars">
+          <div class="wwa-pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <strong data-i18n="about.pillar1.title">Safe & Reliable</strong>
+              <p data-i18n="about.pillar1.text">Licensed vehicles, vetted drivers, and 24/7 support throughout your journey.</p>
+            </div>
+          </div>
+          <div class="wwa-pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <strong data-i18n="about.pillar2.title">Tailored Experiences</strong>
+              <p data-i18n="about.pillar2.text">Every tour is crafted around you — your pace, your interests, your dream trip.</p>
+            </div>
+          </div>
+          <div class="wwa-pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <strong data-i18n="about.pillar3.title">Local Knowledge</strong>
+              <p data-i18n="about.pillar3.text">Our guides are born and raised here — they know the island like no guidebook ever could.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="about.html" class="btn-about" data-i18n="about.cta">
+          <span>Discover Our Full Story</span>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Decorative bottom wave -->
+    <div class="wwa-wave-bottom">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="#fdfcf8"/>
+      </svg>
+    </div>
+
+  </section>
+
+
+  <!-- ===== LANGUAGE SWITCHER ===== -->
+  <div class="lang-switcher" id="lang-switcher">
+    <button class="lang-toggle" id="lang-toggle" aria-label="Select language">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" stroke="currentColor" stroke-width="2"/></svg>
+      <span id="current-lang">EN</span>
+    </button>
+    <div class="lang-dropdown" id="lang-dropdown">
+      <button class="lang-option active" data-lang="en" data-label="EN">🇬🇧 English</button>
+      <button class="lang-option" data-lang="ru" data-label="RU">🇷🇺 Русский</button>
+      <button class="lang-option" data-lang="de" data-label="DE">🇩🇪 Deutsch</button>
+      <button class="lang-option" data-lang="fr" data-label="FR">🇫🇷 Français</button>
+      <button class="lang-option" data-lang="es" data-label="ES">🇪🇸 Español</button>
+    </div>
+  </div>
+
+  <script src="source/js/main.js"></script>
+  <script src="source/js/translation.js"></script>
+</body>
+</html>
