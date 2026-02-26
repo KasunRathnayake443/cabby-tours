@@ -263,12 +263,12 @@ body {
 /* Slide backgrounds using CSS gradients + unsplash */
 .slide-1 {
   background:
-    url('https://images.unsplash.com/photo-1588416936097-41850ab3d86d?w=1600&q=80') center/cover no-repeat;
+    url('../img/hero/beach.jpg') center/cover no-repeat;
 }
 
 .slide-2 {
   background:
-    url('https://images.unsplash.com/photo-1610547189316-5e9b97e4adc8?w=1600&q=80') center/cover no-repeat;
+    url('../img/hero/hill.jpg') center/cover no-repeat;
 }
 
 /* Animated background pan */
