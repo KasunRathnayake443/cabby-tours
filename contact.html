@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cabby Tours — Contact Us</title>
+  <link rel="icon" href="source/img/logo.png" type="image/png" />
+  <!-- Fonts & main style (embedded for demo, normally would be in style.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET / GLOBAL ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: #fdfcf8;
+      color: #1e2a2e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===== HEADER (unchanged from original) ===== */
+    .site-header {
+      background: #ffffffdd;
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+      padding: 0.8rem 2rem;
+    }
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .logo-icon img { height: 48px; width: auto; display: block; }
+    .logo-text { line-height: 1.2; }
+    .logo-main { font-weight: 600; font-size: 1.6rem; letter-spacing: 1px; }
+    .logo-sub { font-size: 0.8rem; letter-spacing: 2px; color: #5a6b4b; display: block; }
+    .main-nav ul { display: flex; gap: 2rem; font-weight: 500; }
+    .main-nav a { transition: color 0.2s; }
+    .main-nav a:hover { color: #b38b5d; }
+    .btn-plan {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #1e2a2e;
+      color: #fff;
+      padding: 0.6rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .btn-plan svg { width: 20px; }
+    .btn-plan:hover { background: #2f3f45; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+    .hamburger span { width: 28px; height: 2px; background: #1e2a2e; border-radius: 2px; }
+    @media (max-width: 900px) {
+      .main-nav, .btn-plan { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ===== CONTACT US SECTION (new) ===== */
+    .contact-page {
+      max-width: 1300px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .contact-header .eyebrow {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #b38b5d;
+      display: inline-block;
+      border-bottom: 2px solid #b38b5d;
+      padding-bottom: 0.3rem;
+    }
+    .contact-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin: 1rem 0 0.8rem;
+      line-height: 1.2;
+    }
+    .contact-header h1 em {
+      font-style: italic;
+      color: #8a6e4b;
+    }
+    .contact-header p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #4a5a5f;
+      font-size: 1.2rem;
+    }
+
+    /* two column layout */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      background: #ffffff;
+      border-radius: 36px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+      overflow: hidden;
+      border: 1px solid #f0eee6;
+    }
+
+    .contact-info {
+      background: #1e2a2e;
+      color: #f0ede5;
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+    }
+    .contact-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .contact-info h2 em { color: #c9ad7e; font-style: italic; }
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .info-icon {
+      background: #2e3b40;
+      border-radius: 50px;
+      padding: 0.8rem;
+      display: inline-flex;
+      color: #b38b5d;
+    }
+    .info-icon svg { width: 24px; height: 24px; }
+    .info-text h4 { font-weight: 600; margin-bottom: 0.2rem; color: #fff; }
+    .info-text p, .info-text a { color: #beb9ae; line-height: 1.6; }
+    .info-text a:hover { color: #dbbc87; }
+
+    .social-links {
+      margin-top: auto;
+      display: flex;
+      gap: 1.2rem;
+      padding-top: 2rem;
+    }
+    .social-icon {
+      background: #2e3b40;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+    }
+    .social-icon:hover {
+      background: #b38b5d;
+      color: #1e2a2e;
+    }
+
+    /* contact form */
+    .contact-form {
+      padding: 3rem 2.5rem;
+      background: #fff;
+    }
+    .form-row {
+      margin-bottom: 1.8rem;
+    }
+    .form-row label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #4f5b5f;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border: 1px solid #ddd9cf;
+      border-radius: 30px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      background: #f9f8f4;
+      transition: 0.2s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: #b38b5d;
+      box-shadow: 0 0 0 3px rgba(179,139,93,0.1);
+    }
+    textarea.form-control {
+      min-height: 140px;
+      resize: vertical;
+    }
+    .btn-submit {
+      background: #b38b5d;
+      color: #fff;
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: 0.2s;
+    }
+    .btn-submit:hover {
+      background: #9f7547;
+    }
+    .btn-submit svg {
+      width: 22px;
+    }
+    .map-placeholder {
+      margin-top: 2rem;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid #eee;
+    }
+    .map-placeholder img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* extra wave / footer style (mini) */
+    .footer-note {
+      background: #1e2a2e;
+      color: #a8a69b;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 5rem;
+      font-size: 0.9rem;
+    }
+
+    /* carousel, who we are – omitted for brevity but kept from original (only contact added) */
+    /* basic lang switcher (unchanged) */
+    .lang-switcher { position: fixed; bottom: 30px; right: 30px; z-index: 99; }
+    .lang-toggle { background: #fff; border: none; border-radius: 60px; padding: 0.8rem 1.4rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1); display: flex; gap: 0.5rem; cursor: pointer; }
+    .lang-dropdown { display: none; position: absolute; bottom: 70px; right: 0; background: white; border-radius: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); flex-direction: column; min-width: 160px; }
+    .lang-option { padding: 0.8rem 1.5rem; background: none; border: none; text-align: left; cursor: pointer; }
+    .lang-option:hover { background: #f0eee6; }
+    .lang-switcher:hover .lang-dropdown { display: flex; }
+
+    @media (max-width: 800px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER (identical to original) ===== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <img src="source/img/logo.png" alt="Cabby Tours Logo" />
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">Cabby</span>
+          <span class="logo-sub">TOURS</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="#hero" data-i18n="nav.home">Home</a></li>
+          <li><a href="#services" data-i18n="nav.services">Our Services</a></li>
+          <li><a href="#tours" data-i18n="nav.tours">Tours</a></li>
+          <li><a href="#about" data-i18n="nav.about">About Us</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <a href="#tours" class="btn-plan">
+        <span data-i18n="nav.planBtn">Plan Your Tour</span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== NEW CONTACT US PAGE SECTION ===== -->
+  <section class="contact-page" id="contact">
+    <div class="contact-header">
+      <span class="eyebrow" data-i18n="contact.eyebrow">Get in touch</span>
+      <h1><span data-i18n="contact.heading1">We'd love to hear</span> <em data-i18n="contact.heading2">from you</em></h1>
+      <p data-i18n="contact.subhead">Whether you're planning your dream Sri Lankan adventure or have a quick question — our team is ready to help.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- left: contact details -->
+      <div class="contact-info">
+        <h2><em data-i18n="contact.infoTitle">Cabby</em> <span data-i18n="contact.infoTitle2">Tours</span></h2>
+        <div class="info-item">
+          <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4-8-10V5l8-3 8 3v7c0 6-8 10-8 10z"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <div class="info-text">
+            <h4 data-i18n="contact.addressTitle">Head Office</h4>
+            <p data-i18n="contact.address">24 Galle Road, Colombo 03,<br>Sri Lanka</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a1.999 1.999 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8 10a16 16 0 0 0 6 6l1.27-1.27a1.999 1.999 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div class="info-text">
+            <h4 data-i18n="contact.phoneTitle">Give us a call</h4>
+            <p><a href="tel:+94112223344">+94 11 222 3344</a><br><a href="tel:+94771234567">+94 77 123 4567</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <div class="info-text">
+            <h4 data-i18n="contact.emailTitle">Email</h4>
+            <p><a href="mailto:hello@cabbytours.lk">hello@cabbytours.lk</a><br><a href="mailto:reservations@cabbytours.lk">reservations@cabbytours.lk</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+          <div class="info-text">
+            <h4 data-i18n="contact.hoursTitle">Office hours</h4>
+            <p data-i18n="contact.hours">Monday – Saturday: 8:00 – 18:00<br>Sunday: Closed</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-icon" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+        </div>
+
+        <!-- small map preview (static) -->
+        <div class="map-placeholder">
+          <img src="https://maps.googleapis.com/maps/api/staticmap?center=Colombo,Sri%20Lanka&zoom=12&size=400x200&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg" alt="Map of Colombo" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- right: contact form -->
+      <div class="contact-form">
+        <form action="#" method="post" id="contactForm">
+          <div class="form-row">
+            <label for="name" data-i18n="form.nameLabel">Full name *</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Saman Perera" required>
+          </div>
+          <div class="form-row">
+            <label for="email" data-i18n="form.emailLabel">Email address *</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required>
+          </div>
+          <div class="form-row">
+            <label for="tour" data-i18n="form.tourLabel">Tour of interest (optional)</label>
+            <select id="tour" name="tour" class="form-control">
+              <option value="" data-i18n="form.selectDefault">— Select (optional) —</option>
+              <option value="cultural" data-i18n="form.cultural">Cultural Triangle</option>
+              <option value="hill" data-i18n="form.hill">Hill Country</option>
+              <option value="beach" data-i18n="form.beach">Beach Escape</option>
+              <option value="wildlife" data-i18n="form.wildlife">Wildlife Safari</option>
+              <option value="custom" data-i18n="form.custom">Fully custom</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message" data-i18n="form.messageLabel">Your message *</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Tell us about your dream trip or any questions..." required></textarea>
+          </div>
+          <div class="form-row">
+            <button type="submit" class="btn-submit">
+              <span data-i18n="form.sendBtn">Send message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+          <p style="font-size:0.85rem; color:#888; margin-top:1rem;" data-i18n="form.privacy">We’ll reply within 24 hours. Your data is safe with us.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== (ORIGINAL CAROUSEL + ABOUT omitted but contact added above) 
+       The rest of the page would follow original: we include a minimal footer to keep clean -->
+
+  <!-- Minimal footer (replaces original carousel/about for this demo) 
+       You can keep the original sections if you want — we just place a footer to separate -->
+  <div style="height: 2rem;"></div>
+
+  <!-- Language switcher (exactly as original) -->
+  <div class="lang-switcher" id="lang-switcher">
+    <button class="lang-toggle" id="lang-toggle" aria-label="Select language">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" stroke="currentColor" stroke-width="2"/></svg>
+      <span id="current-lang">EN</span>
+    </button>
+    <div class="lang-dropdown" id="lang-dropdown">
+      <button class="lang-option active" data-lang="en" data-label="EN">🇬🇧 English</button>
+      <button class="lang-option" data-lang="ru" data-label="RU">🇷🇺 Русский</button>
+      <button class="lang-option" data-lang="de" data-label="DE">🇩🇪 Deutsch</button>
+      <button class="lang-option" data-lang="fr" data-label="FR">🇫🇷 Français</button>
+      <button class="lang-option" data-lang="es" data-label="ES">🇪🇸 Español</button>
+    </div>
+  </div>
+
+  <!-- Fake script includes (for demo) -->
+  <script src="source/js/main.js"></script>
+  <script src="source/js/translation.js"></script>
+  <script>
+    // Quick form prevent default (just for demo)
+    document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you! (demo) In the real site this would send an enquiry.');
+    });
+  </script>
+
+  <!-- footer note (simple) -->
+  <div class="footer-note">
+    <p>© 2025 Cabby Tours — Sri Lanka. All rights reserved.</p>
+  </div>
+
+</body>
+</html>
