@@ -196,6 +196,215 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// ─── TOURS TAB SWITCHER ─────────────────────
+const toursTabs  = document.querySelectorAll('.tours-tab');
+const toursPanels = document.querySelectorAll('.tours-panel');
+
+toursTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Update active tab
+    toursTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    // Show matching panel
+    const target = tab.dataset.tab;
+    toursPanels.forEach(panel => {
+      panel.classList.remove('active');
+    });
+    const activePanel = document.getElementById(`panel-${target}`);
+    activePanel.classList.add('active');
+
+    // Re-trigger scroll reveal for newly visible cards
+    activePanel.querySelectorAll('[data-reveal]').forEach(el => {
+      if (!el.classList.contains('revealed')) {
+        revealObserver.observe(el);
+      }
+    });
+  });
+});
+
+
+// ─── TESTIMONIALS CAROUSEL ───────────────────
+const testiTrack  = document.getElementById('testi-track');
+const testiDotsEl = document.getElementById('testi-dots');
+const testiPrev   = document.getElementById('testi-prev');
+const testiNext   = document.getElementById('testi-next');
+
+if (testiTrack) {
+  const testiCards  = testiTrack.querySelectorAll('.testi-card');
+  const cardCount   = testiCards.length;
+  let testiIndex    = 0;
+  let testiAuto     = null;
+
+  // Build dots
+  testiCards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'testi-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Review ${i + 1}`);
+    dot.addEventListener('click', () => { goTesti(i); resetTestiAuto(); });
+    testiDotsEl.appendChild(dot);
+  });
+
+  function getCardWidth() {
+    const card = testiCards[0];
+    const gap  = 24; // 1.5rem gap
+    return card.offsetWidth + gap;
+  }
+
+  function goTesti(index) {
+    testiIndex = Math.max(0, Math.min(index, cardCount - 1));
+    const offset = testiIndex * getCardWidth();
+    testiTrack.style.transform = `translateX(-${offset}px)`;
+
+    // Update dots
+    testiDotsEl.querySelectorAll('.testi-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === testiIndex);
+    });
+  }
+
+  function resetTestiAuto() {
+    clearInterval(testiAuto);
+    testiAuto = setInterval(() => {
+      const next = testiIndex >= cardCount - 1 ? 0 : testiIndex + 1;
+      goTesti(next);
+    }, 5000);
+  }
+
+  testiPrev.addEventListener('click', () => {
+    goTesti(testiIndex <= 0 ? cardCount - 1 : testiIndex - 1);
+    resetTestiAuto();
+  });
+
+  testiNext.addEventListener('click', () => {
+    goTesti(testiIndex >= cardCount - 1 ? 0 : testiIndex + 1);
+    resetTestiAuto();
+  });
+
+  // Touch swipe
+  let testiTouchX = 0;
+  testiTrack.addEventListener('touchstart', e => {
+    testiTouchX = e.changedTouches[0].clientX;
+  }, { passive: true });
+
+  testiTrack.addEventListener('touchend', e => {
+    const diff = testiTouchX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? goTesti(testiIndex + 1) : goTesti(testiIndex - 1);
+      resetTestiAuto();
+    }
+  }, { passive: true });
+
+  // Pause on hover
+  testiTrack.addEventListener('mouseenter', () => clearInterval(testiAuto));
+  testiTrack.addEventListener('mouseleave', resetTestiAuto);
+
+  // Init
+  resetTestiAuto();
+}
+
+
+// ─── GALLERY LIGHTBOX ────────────────────────
+const lightbox         = document.getElementById('lightbox');
+const lightboxBackdrop = document.getElementById('lightbox-backdrop');
+const lightboxImg      = document.getElementById('lightbox-img');
+const lightboxCaption  = document.getElementById('lightbox-caption');
+const lightboxCounter  = document.getElementById('lightbox-counter');
+const lightboxClose    = document.getElementById('lightbox-close');
+const lightboxPrev     = document.getElementById('lightbox-prev');
+const lightboxNext     = document.getElementById('lightbox-next');
+
+if (lightbox) {
+  // Collect all gallery images
+  const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+  let lightboxCurrent = 0;
+
+  const galleryData = galleryItems.map(item => ({
+    src:     item.querySelector('img').src,
+    alt:     item.querySelector('img').alt,
+    caption: item.querySelector('.gallery-overlay-content p')?.textContent || ''
+  }));
+
+  function openLightbox(index) {
+    lightboxCurrent = index;
+    updateLightbox();
+    lightbox.classList.add('active');
+    lightboxBackdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxBackdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightbox() {
+    const data = galleryData[lightboxCurrent];
+    lightboxImg.style.opacity = '0';
+    lightboxImg.style.transform = 'scale(0.97)';
+    setTimeout(() => {
+      lightboxImg.src = data.src;
+      lightboxImg.alt = data.alt;
+      lightboxCaption.textContent = data.caption;
+      lightboxCounter.textContent = `${lightboxCurrent + 1} / ${galleryData.length}`;
+      lightboxImg.style.opacity = '1';
+      lightboxImg.style.transform = 'scale(1)';
+    }, 200);
+  }
+
+  function prevLightbox() {
+    lightboxCurrent = (lightboxCurrent - 1 + galleryData.length) % galleryData.length;
+    updateLightbox();
+  }
+
+  function nextLightbox() {
+    lightboxCurrent = (lightboxCurrent + 1) % galleryData.length;
+    updateLightbox();
+  }
+
+  // Attach zoom button click on each item
+  galleryItems.forEach((item, index) => {
+    item.querySelector('.gallery-zoom').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openLightbox(index);
+    });
+    // Also open on item click
+    item.addEventListener('click', () => openLightbox(index));
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxBackdrop.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); prevLightbox(); });
+  lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); nextLightbox(); });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape')      closeLightbox();
+    if (e.key === 'ArrowLeft')   prevLightbox();
+    if (e.key === 'ArrowRight')  nextLightbox();
+  });
+
+  // Touch swipe on lightbox
+  let lbTouchX = 0;
+  lightbox.addEventListener('touchstart', e => {
+    lbTouchX = e.changedTouches[0].clientX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', e => {
+    const diff = lbTouchX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? nextLightbox() : prevLightbox();
+    }
+  }, { passive: true });
+}
+
+
+// ─── FOOTER YEAR ─────────────────────────────
+const yearEl = document.getElementById('footer-year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+
 // ─── APPLY TRANSLATIONS ─────────────────────
 // Called whenever a language is selected.
 // Reads data-i18n attributes and swaps text from translations.js
@@ -218,3 +427,6 @@ function applyTranslations(lang) {
 document.querySelectorAll('[data-reveal]').forEach(el => {
   revealObserver.observe(el);
 });
+
+
+
