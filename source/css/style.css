@@ -1449,3 +1449,370 @@ body {
     gap: 1rem;
   }
 }
+
+/* =============================================
+   CONTACT SECTION
+   ============================================= */
+
+.contact-page {
+  background: linear-gradient(160deg, var(--green-deep) 0%, #0e4a32 60%, #0d3d2b 100%);
+  padding: 7rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background texture dots */
+.contact-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(78, 203, 141, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* ── Header ── */
+.contact-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-header .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 1.25rem;
+}
+
+.contact-header .eyebrow::before,
+.contact-header .eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green-light), var(--green-bright));
+  border-radius: 2px;
+}
+
+.contact-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.contact-header h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.contact-header p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* ── Grid ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  align-items: start;
+}
+
+/* ── Contact Info (left) ── */
+.contact-info {
+  color: white;
+}
+
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.contact-info h2 em {
+  font-style: italic;
+  color: var(--green-light);
+}
+
+.contact-info h2 span {
+  color: white;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  margin-bottom: 0.85rem;
+  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.info-item:hover {
+  background: rgba(78, 203, 141, 0.07);
+  border-color: rgba(78, 203, 141, 0.2);
+  transform: translateX(5px);
+}
+
+.info-icon {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, rgba(44,160,110,0.3), rgba(78,203,141,0.15));
+  border: 1px solid rgba(78,203,141,0.25);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--green-light);
+}
+
+.info-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.info-text h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 0.3rem;
+}
+
+.info-text p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.info-text a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.info-text a:hover {
+  color: var(--green-light);
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.social-icon:hover {
+  background: var(--green-bright);
+  border-color: var(--green-bright);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(44, 160, 110, 0.4);
+}
+
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  stroke: none;
+}
+
+/* Map placeholder */
+.map-placeholder {
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  color: rgba(255,255,255,0.4) !important;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  border-radius: 20px !important;
+  margin-top: 1.5rem !important;
+  transition: border-color var(--transition-fast);
+}
+
+.map-placeholder:hover {
+  border-color: rgba(78, 203, 141, 0.2) !important;
+}
+
+/* ── Contact Form (right) ── */
+.contact-form {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 28px;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.form-row {
+  margin-bottom: 1.4rem;
+}
+
+.form-row label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.925rem;
+  font-weight: 400;
+  color: white;
+  outline: none;
+  transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+  appearance: none;
+}
+
+.form-control::placeholder {
+  color: rgba(255,255,255,0.25);
+}
+
+.form-control:focus {
+  border-color: var(--green-light);
+  background: rgba(78, 203, 141, 0.06);
+  box-shadow: 0 0 0 3px rgba(78, 203, 141, 0.12);
+}
+
+/* Select arrow */
+select.form-control {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234ecb8d' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+select.form-control option {
+  background: var(--green-deep);
+  color: white;
+}
+
+/* Textarea */
+textarea.form-control {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* Submit button */
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, var(--green-bright), var(--green-light));
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.95rem 2.25rem;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: all var(--transition);
+  box-shadow: 0 6px 25px rgba(44, 160, 110, 0.4);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--green-mid), var(--green-bright));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(44, 160, 110, 0.5);
+}
+
+.btn-submit:hover::before {
+  opacity: 1;
+}
+
+.btn-submit span,
+.btn-submit svg {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-submit svg {
+  width: 17px;
+  height: 17px;
+  transition: transform var(--transition-fast);
+}
+
+.btn-submit:hover svg {
+  transform: translateX(4px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-page {
+    padding: 5rem 1.25rem;
+  }
+
+  .contact-form {
+    padding: 1.75rem 1.25rem;
+  }
+}

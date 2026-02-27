@@ -214,3 +214,7 @@ function applyTranslations(lang) {
   document.documentElement.lang = lang;
   localStorage.setItem('cabby-lang', lang);
 }
+
+document.querySelectorAll('[data-reveal]').forEach(el => {
+  revealObserver.observe(el);
+});
