@@ -232,6 +232,116 @@ body {
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+
+
+/* =============================================
+   MOBILE / RESPONSIVE
+   ============================================= */
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .btn-plan {
+    display: none;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    background: rgba(10, 45, 28, 0.98);
+    backdrop-filter: blur(16px);
+    padding: 1rem 0 2rem;
+    transform: translateY(-110%);
+    transition: transform var(--transition);
+    border-bottom: 1px solid rgba(78, 203, 141, 0.2);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    
+  }
+
+  .main-nav.open {
+    transform: translateY(0);
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0 1.5rem;
+  }
+
+  .main-nav li {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 1rem 0.5rem;
+    font-size: 1.05rem;
+    border-radius: 0;
+  }
+
+  .main-nav a::after {
+    display: none;
+  }
+
+  .main-nav li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  /* Mobile plan button inside nav */
+  .main-nav::after {
+    content: 'Plan Your Tour →';
+    display: block;
+    margin: 1.5rem 2rem 0;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--green-deep);
+    text-align: center;
+    padding: 0.85rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    height: fit-content;
+  }
+
+  .slide-badge {
+    display: none;
+  }
+
+  .slide-content {
+    padding: 0 1.5rem;
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-title {
+    font-size: 2.4rem;
+  }
+
+  .slide-desc {
+    font-size: 0.95rem;
+  }
+
+  .lang-switcher {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* =============================================
+   SCROLLBAR
+   ============================================= */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--green-deep); }
+::-webkit-scrollbar-thumb { background: var(--green-bright); border-radius: 3px; }
+
 /* =============================================
    HERO CAROUSEL
    ============================================= */
@@ -1157,113 +1267,6 @@ body {
   }
 }
 
-/* =============================================
-   MOBILE / RESPONSIVE
-   ============================================= */
-
-@media (max-width: 900px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .btn-plan {
-    display: none;
-  }
-
-  .main-nav {
-    position: fixed;
-    top: 0px;
-    left: 0;
-    right: 0;
-    background: rgba(10, 45, 28, 0.98);
-    backdrop-filter: blur(16px);
-    padding: 1rem 0 2rem;
-    transform: translateY(-110%);
-    transition: transform var(--transition);
-    border-bottom: 1px solid rgba(78, 203, 141, 0.2);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-    
-  }
-
-  .main-nav.open {
-    transform: translateY(0);
-  }
-
-  .main-nav ul {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 0 1.5rem;
-  }
-
-  .main-nav li {
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .main-nav a {
-    display: block;
-    padding: 1rem 0.5rem;
-    font-size: 1.05rem;
-    border-radius: 0;
-  }
-
-  .main-nav a::after {
-    display: none;
-  }
-
-  .main-nav li:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  /* Mobile plan button inside nav */
-  .main-nav::after {
-    content: 'Plan Your Tour →';
-    display: block;
-    margin: 1.5rem 2rem 0;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--green-deep);
-    text-align: center;
-    padding: 0.85rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.02em;
-    cursor: pointer;
-    height: fit-content;
-  }
-
-  .slide-badge {
-    display: none;
-  }
-
-  .slide-content {
-    padding: 0 1.5rem;
-    padding-top: 80px;
-  }
-}
-
-@media (max-width: 480px) {
-  .slide-title {
-    font-size: 2.4rem;
-  }
-
-  .slide-desc {
-    font-size: 0.95rem;
-  }
-
-  .lang-switcher {
-    bottom: 1rem;
-    right: 1rem;
-  }
-}
-
-/* =============================================
-   SCROLLBAR
-   ============================================= */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--green-deep); }
-::-webkit-scrollbar-thumb { background: var(--green-bright); border-radius: 3px; }
 
 
 /* =============================================
@@ -1597,7 +1600,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, var(--green-pale) 0%, transparent 40%, var(--green-pale) 100%);
+  /* background: linear-gradient(180deg, var(--green-pale) 0%, transparent 40%, var(--green-pale) 100%); */
   opacity: 0.3;
   pointer-events: none;
 }
@@ -2497,9 +2500,10 @@ textarea.form-control {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, var(--green-pale) 0%, transparent 40%, var(--green-pale) 100%);
+  /* background: linear-gradient(180deg, var(--green-pale) 0%, transparent 40%, var(--green-pale) 100%); */
   opacity: 0.3;
   pointer-events: none;
+  
 }
 
 .testi-container {

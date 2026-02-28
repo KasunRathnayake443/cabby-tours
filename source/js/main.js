@@ -231,52 +231,102 @@ const testiPrev   = document.getElementById('testi-prev');
 const testiNext   = document.getElementById('testi-next');
 
 if (testiTrack) {
-  const testiCards  = testiTrack.querySelectorAll('.testi-card');
-  const cardCount   = testiCards.length;
-  let testiIndex    = 0;
-  let testiAuto     = null;
+  const originalCards = Array.from(testiTrack.querySelectorAll('.testi-card'));
+  const cardCount     = originalCards.length;
+  let testiIndex      = 0;
+  let testiAuto       = null;
+  let isTransitioning = false;
 
-  // Build dots
-  testiCards.forEach((_, i) => {
+  // ── Clone cards for infinite loop ──
+  // Append clones of all cards to the end
+  originalCards.forEach(card => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    testiTrack.appendChild(clone);
+  });
+
+  // ── Build dots (only for original cards) ──
+  originalCards.forEach((_, i) => {
     const dot = document.createElement('button');
     dot.className = 'testi-dot' + (i === 0 ? ' active' : '');
     dot.setAttribute('aria-label', `Review ${i + 1}`);
-    dot.addEventListener('click', () => { goTesti(i); resetTestiAuto(); });
+    dot.addEventListener('click', () => {
+      if (isTransitioning) return;
+      testiIndex = i;
+      updateCarousel(true);
+      resetTestiAuto();
+    });
     testiDotsEl.appendChild(dot);
   });
 
   function getCardWidth() {
-    const card = testiCards[0];
-    const gap  = 24; // 1.5rem gap
-    return card.offsetWidth + gap;
+    const allCards = testiTrack.querySelectorAll('.testi-card');
+    return allCards[0].offsetWidth + 24; // card width + 1.5rem gap
   }
 
-  function goTesti(index) {
-    testiIndex = Math.max(0, Math.min(index, cardCount - 1));
-    const offset = testiIndex * getCardWidth();
-    testiTrack.style.transform = `translateX(-${offset}px)`;
-
-    // Update dots
+  function updateDots() {
     testiDotsEl.querySelectorAll('.testi-dot').forEach((d, i) => {
       d.classList.toggle('active', i === testiIndex);
     });
   }
 
-  function resetTestiAuto() {
-    clearInterval(testiAuto);
-    testiAuto = setInterval(() => {
-      const next = testiIndex >= cardCount - 1 ? 0 : testiIndex + 1;
-      goTesti(next);
-    }, 5000);
+  function updateCarousel(animate = true) {
+    if (!animate) {
+      testiTrack.style.transition = 'none';
+    } else {
+      testiTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    }
+    const offset = testiIndex * getCardWidth();
+    testiTrack.style.transform = `translateX(-${offset}px)`;
+    updateDots();
   }
 
-  testiPrev.addEventListener('click', () => {
-    goTesti(testiIndex <= 0 ? cardCount - 1 : testiIndex - 1);
+  function nextTesti() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    testiIndex++;
+    updateCarousel(true);
+  }
+
+  function prevTesti() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    testiIndex--;
+    updateCarousel(true);
+  }
+
+  // ── After transition ends — handle infinite jump ──
+  testiTrack.addEventListener('transitionend', () => {
+    isTransitioning = false;
+
+    // If we scrolled into the cloned section — jump back silently
+    if (testiIndex >= cardCount) {
+      testiIndex = testiIndex - cardCount;
+      updateCarousel(false); // instant, no animation
+    }
+
+    // If we went before 0 (prev from first) — jump to end silently
+    if (testiIndex < 0) {
+      testiIndex = cardCount + testiIndex;
+      updateCarousel(false);
+    }
+
+    updateDots();
+  });
+
+  function resetTestiAuto() {
+    clearInterval(testiAuto);
+    testiAuto = setInterval(nextTesti, 5000);
+  }
+
+  // Controls
+  testiNext.addEventListener('click', () => {
+    nextTesti();
     resetTestiAuto();
   });
 
-  testiNext.addEventListener('click', () => {
-    goTesti(testiIndex >= cardCount - 1 ? 0 : testiIndex + 1);
+  testiPrev.addEventListener('click', () => {
+    prevTesti();
     resetTestiAuto();
   });
 
@@ -289,7 +339,7 @@ if (testiTrack) {
   testiTrack.addEventListener('touchend', e => {
     const diff = testiTouchX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) {
-      diff > 0 ? goTesti(testiIndex + 1) : goTesti(testiIndex - 1);
+      diff > 0 ? nextTesti() : prevTesti();
       resetTestiAuto();
     }
   }, { passive: true });
@@ -298,9 +348,16 @@ if (testiTrack) {
   testiTrack.addEventListener('mouseenter', () => clearInterval(testiAuto));
   testiTrack.addEventListener('mouseleave', resetTestiAuto);
 
+  // Recalculate on resize
+  window.addEventListener('resize', () => {
+    updateCarousel(false);
+  }, { passive: true });
+
   // Init
+  updateCarousel(false);
   resetTestiAuto();
 }
+
 
 
 // ─── GALLERY LIGHTBOX ────────────────────────
