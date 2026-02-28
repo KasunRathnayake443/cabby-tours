@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cabby Tours — Sri Lanka</title>
+  <link rel="stylesheet" href="source/css/style.css" />
+  <link rel="stylesheet" href="source/css/gallery.css" />
+  <link rel="icon" href="source/img/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <img src="source/img/logo.png" alt="Cabby Tours Logo" />
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">Cabby</span>
+          <span class="logo-sub">TOURS</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="index.html#hero" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#services" data-i18n="nav.services">Our Services</a></li>
+          <li><a href="index.html#tours" data-i18n="nav.tours">Tours</a></li>
+          <li><a href="index.html#about" data-i18n="nav.about">About Us</a></li>
+          <li><a href="index.html#contact" data-i18n="nav.contact">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <a href="index.html#tours" class="btn-plan">
+        <span data-i18n="nav.planBtn">Plan Your Tour</span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+
+<!-- ===== GALLERY PAGE ===== -->
+<section class="gallery-page" id="gallery-page">
+
+  <!-- Header -->
+  <div class="gallery-page-hero">
+    <div class="gallery-page-hero-inner">
+      <div class="wwa-eyebrow" style="justify-content:center">
+        <span class="eyebrow-line"></span>
+        <span>Our Gallery</span>
+      </div>
+      <h1 class="gallery-page-title">Real Moments, <em>Real People</em></h1>
+      <p class="gallery-page-sub">Every photo on this page was taken by our guests during their Cabby Tours journey. No filters, no staging — just genuine Sri Lanka memories.</p>
+
+      <!-- Stats row -->
+      <div class="gallery-page-stats">
+        <div class="gp-stat">
+          <strong>4,800+</strong>
+          <span>Happy Travellers</span>
+        </div>
+        <div class="gp-stat-divider"></div>
+        <div class="gp-stat">
+          <strong>12+</strong>
+          <span>Years of Experience</span>
+        </div>
+        <div class="gp-stat-divider"></div>
+        <div class="gp-stat">
+          <strong>380+</strong>
+          <span>Reviews</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter tabs -->
+  <div class="gallery-page-filters">
+    <div class="gallery-filters-inner">
+      <button class="gp-filter active" data-filter="all">All Photos</button>
+      <button class="gp-filter" data-filter="culture">Culture</button>
+      <button class="gp-filter" data-filter="wildlife">Wildlife</button>
+      <button class="gp-filter" data-filter="beach">Beach</button>
+      <button class="gp-filter" data-filter="nature">Nature</button>
+      <button class="gp-filter" data-filter="scenic">Scenic</button>
+      <button class="gp-filter" data-filter="people">People</button>
+    </div>
+  </div>
+
+  <!-- Masonry Grid -->
+  <div class="gallery-page-container">
+    <div class="gp-grid" id="gp-grid">
+
+      <div class="gp-item gp-tall" data-category="culture">
+        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=85" alt="Customer at Sigiriya" loading="lazy"/>
+        <div class="gp-overlay">
+          <div class="gp-overlay-info">
+            <span class="gp-cat-badge">Culture</span>
+            <p>"Climbing Sigiriya was surreal"</p>
+            <span class="gp-credit">📸 Anna M. · Germany</span>
+          </div>
+          <button class="gp-zoom-btn" aria-label="View full">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="gp-item" data-category="wildlife">
+        <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=85" alt="Safari experience" loading="lazy"/>
+        <div class="gp-overlay">
+          <div class="gp-overlay-info">
+            <span class="gp-cat-badge">Wildlife</span>
+            <p>"Best day of our trip!"</p>
+            <span class="gp-credit">📸 James R. · UK</span>
+          </div>
+          <button class="gp-zoom-btn" aria-label="View full">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="gp-item" data-category="beach">
+        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800&q=85" alt="Mirissa beach" loading="lazy"/>
+        <div class="gp-overlay">
+          <div class="gp-overlay-info">
+            <span class="gp-cat-badge">Beach</span>
+            <p>"Mirissa at sunset 🌅"</p>
+            <span class="gp-credit">📸 Sofia L. · Russia</span>
+          </div>
+          <button class="gp-zoom-btn" aria-label="View full">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="gp-item gp-wide" data-category="nature">
+        <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1000&q=85" alt="Tea plantation family" loading="lazy"/>
+        <div class="gp-overlay">
+          <div class="gp-overlay-info">
+            <span class="gp-cat-badge">Nature</span>
+            <p>"Our family in the tea highlands"</p>
+            <span class="gp-credit">📸 Marc D. · France</span>
+          </div>
+          <button class="gp-zoom-btn" aria-label="View full">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="gp-item gp-tall" data-category="scenic">
+        <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=800&q=85" alt="Nine Arch Bridge couple" loading="lazy"/>
+        <div class="gp-overlay">
+          <div class="gp-overlay-info">
+            <span class="gp-cat-badge">Scenic</span>
+            <p>"Worth every early alarm"</p>
+            <span class="gp-credit">📸 Lukas & Mia · Germany</span>
+          </div>
+          <button class="gp-zoom-btn" aria-label="View full">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="gp-item" data-category="culture">
+        <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&q=85" alt="Temple visit" loading="lazy"/>
+        <div class="gp-overlay">
+          <div class="gp-overlay-info">
+            <span class="gp-cat-badge">Culture</span>
+            <p>"Temple of the Tooth — breathtaking"</p>
+            <span class="gp-credit">📸 Elena K. · Spain</span>
+          </div>
+          <button class="gp-zoom-btn" aria-label="View full">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="gp-item" data-category="people">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=85" alt="Traveller portrait" loading="lazy"/>
+        <div class="gp-overlay">
+          <div class="gp-overlay-info">
+            <span class="gp-cat-badge">People</span>
+            <p>"The locals made our trip"</p>
+            <span class="gp-credit">📸 David K. · Australia</span>
+          </div>
+          <button class="gp-zoom-btn" aria-label="View full">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="gp-item gp-wide" data-category="beach">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&q=85" alt="Beach panorama" loading="lazy"/>
+        <div class="gp-overlay">
+          <div class="gp-overlay-info">
+            <span class="gp-cat-badge">Beach</span>
+            <p>"Unawatuna — pure paradise"</p>
+            <span class="gp-credit">📸 Nina S. · Sweden</span>
+          </div>
+          <button class="gp-zoom-btn" aria-label="View full">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="gp-item" data-category="wildlife">
+        <img src="https://images.unsplash.com/photo-1551415923-a2297c7fda79?w=800&q=85" alt="Elephant herd" loading="lazy"/>
+        <div class="gp-overlay">
+          <div class="gp-overlay-info">
+            <span class="gp-cat-badge">Wildlife</span>
+            <p>"40 elephants in one day!"</p>
+            <span class="gp-credit">📸 Sofia L. · Russia</span>
+          </div>
+          <button class="gp-zoom-btn" aria-label="View full">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="gp-item" data-category="nature">
+        <img src="https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?w=800&q=85" alt="Tea hills misty" loading="lazy"/>
+        <div class="gp-overlay">
+          <div class="gp-overlay-info">
+            <span class="gp-cat-badge">Nature</span>
+            <p>"Misty mornings in Ella"</p>
+            <span class="gp-credit">📸 Lukas & Mia · Germany</span>
+          </div>
+          <button class="gp-zoom-btn" aria-label="View full">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="gp-item gp-tall" data-category="scenic">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=85" alt="Mountain view" loading="lazy"/>
+        <div class="gp-overlay">
+          <div class="gp-overlay-info">
+            <span class="gp-cat-badge">Scenic</span>
+            <p>"Horton Plains at sunrise"</p>
+            <span class="gp-credit">📸 Marc D. · France</span>
+          </div>
+          <button class="gp-zoom-btn" aria-label="View full">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="gp-item" data-category="people">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=85" alt="Group of travellers" loading="lazy"/>
+        <div class="gp-overlay">
+          <div class="gp-overlay-info">
+            <span class="gp-cat-badge">People</span>
+            <p>"Our group tour crew ❤️"</p>
+            <span class="gp-credit">📸 James R. · UK</span>
+          </div>
+          <button class="gp-zoom-btn" aria-label="View full">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Load more -->
+    <div class="gp-load-more">
+      <p class="gp-count" id="gp-count">Showing <strong>12</strong> photos</p>
+      <button class="btn-load-more" id="btn-load-more">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Load More Photos
+      </button>
+    </div>
+
+    <!-- Share CTA -->
+    <div class="gp-share-cta">
+      <div class="gp-share-inner">
+        <div class="gp-share-text">
+          <h3>Travelled with us? <em>Share your photos!</em></h3>
+          <p>Tag us on Instagram <strong>@cabbytours</strong> or send your favourites to <a href="mailto:hello@cabbytours.lk">hello@cabbytours.lk</a> and we'll feature them here.</p>
+        </div>
+        <div class="gp-share-btns">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Tag on Instagram
+          </a>
+          <a href="mailto:hello@cabbytours.lk" class="btn-email-photo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email Your Photos
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Lightbox -->
+<div class="gp-lightbox" id="gp-lightbox">
+  <button class="gp-lb-close" id="gp-lb-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <button class="gp-lb-nav gp-lb-prev" id="gp-lb-prev" aria-label="Previous">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="gp-lb-content">
+    <img src="" alt="" id="gp-lb-img"/>
+    <div class="gp-lb-info">
+      <p id="gp-lb-caption"></p>
+      <span id="gp-lb-credit"></span>
+    </div>
+  </div>
+  <button class="gp-lb-nav gp-lb-next" id="gp-lb-next" aria-label="Next">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="gp-lb-counter" id="gp-lb-counter"></div>
+</div>
+<div class="gp-lb-backdrop" id="gp-lb-backdrop"></div>
+
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+
+  <!-- Top wave -->
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,0 L0,0 Z" fill="#fdfcf8"/>
+    </svg>
+  </div>
+
+  <div class="footer-inner">
+
+    <!-- ── Column 1: Brand ── -->
+    <div class="footer-brand">
+      <a href="#" class="logo footer-logo">
+        <div class="logo-icon">
+          <img src="source/img/logo.png" alt="Cabby Tours logo" width="40" height="40"/>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">Cabby</span>
+          <span class="logo-sub">TOURS</span>
+        </div>
+      </a>
+      <p class="footer-brand-desc" data-i18n="footer.desc">
+        Sri Lanka's most trusted private tour operator. We turn your dream island holiday into an unforgettable reality — one journey at a time.
+      </p>
+      <div class="footer-social">
+        <a href="#" class="footer-social-icon" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="footer-social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" class="footer-social-icon" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+        <a href="#" class="footer-social-icon" aria-label="TripAdvisor">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+        </a>
+      </div>
+      <!-- Trust badges -->
+      <div class="footer-badges">
+        <div class="footer-badge">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <span>Licensed Operator</span>
+        </div>
+        <div class="footer-badge">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <span>4.9★ Rated</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Column 2: Quick Links ── -->
+    <div class="footer-col">
+      <h4 class="footer-col-title" data-i18n="footer.quicklinks">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#hero" data-i18n="nav.home">Home</a></li>
+        <li><a href="#about" data-i18n="nav.about">About Us</a></li>
+        <li><a href="#services" data-i18n="nav.services">Our Services</a></li>
+        <li><a href="#tours" data-i18n="nav.tours">Tours</a></li>
+        <li><a href="#gallery" data-i18n="footer.gallery">Gallery</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- ── Column 3: Our Tours ── -->
+    <div class="footer-col">
+      <h4 class="footer-col-title" data-i18n="footer.ourtours">Our Tours</h4>
+      <ul class="footer-links">
+        <li><a href="tours.html#sigiriya-day" data-i18n="tours.day1.title">Sigiriya & Dambulla Explorer</a></li>
+        <li><a href="tours.html#ella-day" data-i18n="tours.day2.title">Ella Highlands Day Escape</a></li>
+        <li><a href="tours.html#south-coast-day" data-i18n="tours.day3.title">South Coast & Mirissa Beach</a></li>
+        <li><a href="tours.html#classic-7" data-i18n="tours.multi1.title">Classic Sri Lanka — 7 Days</a></li>
+        <li><a href="tours.html#hill-country-4" data-i18n="tours.multi2.title">Hill Country Retreat — 4 Days</a></li>
+        <li><a href="tours.html#wildlife-beach-5" data-i18n="tours.multi3.title">Wildlife & Beach — 5 Days</a></li>
+      </ul>
+    </div>
+
+    <!-- ── Column 4: Contact & Hours ── -->
+    <div class="footer-col">
+      <h4 class="footer-col-title" data-i18n="footer.contacttitle">Get In Touch</h4>
+      <ul class="footer-contact-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s-8-4-8-10V5l8-3 8 3v7c0 6-8 10-8 10z" stroke="currentColor" stroke-width="2"/></svg>
+          <span data-i18n="contact.address">24 Galle Road, Colombo 03, Sri Lanka</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.27" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <a href="tel:+94771234567">+94 77 123 4567</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/></svg>
+          <a href="mailto:hello@cabbytours.lk">hello@cabbytours.lk</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span data-i18n="contact.hours">Mon – Sat: 8:00 – 18:00</span>
+        </li>
+      </ul>
+
+      <!-- WhatsApp CTA -->
+      <a href="https://wa.me/94771234567" class="footer-whatsapp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span data-i18n="footer.whatsapp">Chat on WhatsApp</span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- ── Bottom bar ── -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p class="footer-copy">
+        &copy; <span id="footer-year"></span> Cabby Tours (Pvt) Ltd. 
+        <span data-i18n="footer.rights">All rights reserved.</span>
+      </p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <span class="footer-divider">·</span>
+        <a href="terms.html" data-i18n="footer.terms">Terms & Conditions</a>
+        <span class="footer-divider">·</span>
+        <a href="sitemap.html" data-i18n="footer.sitemap">Sitemap</a>
+      </div>
+      <p class="footer-made">
+        Made with <span style="color:var(--green-light)">♥</span> in Sri Lanka
+      </p>
+    </div>
+  </div>
+
+</footer>
+
+  <!-- ===== LANGUAGE SWITCHER ===== -->
+  <div class="lang-switcher" id="lang-switcher">
+    <button class="lang-toggle" id="lang-toggle" aria-label="Select language">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" stroke="currentColor" stroke-width="2"/></svg>
+      <span id="current-lang">EN</span>
+    </button>
+    <div class="lang-dropdown" id="lang-dropdown">
+      <button class="lang-option active" data-lang="en" data-label="EN">🇬🇧 English</button>
+      <button class="lang-option" data-lang="ru" data-label="RU">🇷🇺 Русский</button>
+      <button class="lang-option" data-lang="de" data-label="DE">🇩🇪 Deutsch</button>
+      <button class="lang-option" data-lang="fr" data-label="FR">🇫🇷 Français</button>
+      <button class="lang-option" data-lang="es" data-label="ES">🇪🇸 Español</button>
+    </div>
+  </div>
+
+<!-- ===== WHATSAPP FLOAT BUTTON ===== -->
+<a href="https://wa.me/94771234567" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 23.428a.75.75 0 0 0 .916.916l5.604-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.695 9.695 0 0 1-4.951-1.355l-.355-.211-3.658.957.974-3.567-.23-.368A9.699 9.699 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+  </svg>
+  <span class="whatsapp-float-label">Chat with us</span>
+</a>
+
+
+  <script src="source/js/main.js"></script>
+  <script src="source/js/gallery.js"></script>
+  <script src="source/js/translation.js"></script>
+
+</body>
+</html>
