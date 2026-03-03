@@ -76,18 +76,34 @@ const translations = {
     "tours.per": "/ person",
     "tours.book": "Book Now",
 
-    "tours.day1.title": "Sigiriya & Dambulla Explorer",
-    "tours.day1.desc": "Climb the legendary Lion Rock fortress and descend into the golden cave temples of Dambulla — two UNESCO wonders in one unforgettable day.",
+    
+    "tours.day1.title": "Yala National Park",
+    "tours.day1.desc": "Yala National Park is a national park in Sri Lanka, bordering the Indian Ocean and covering 979 km² (378 sq mi). It was designated as a wildlife sanctuary in 1900. It hosts diverse ecosystems ranging from moist monsoon forests to freshwater and marine wetlands, and is important for the conservation of Sri Lankan elephants, Sri Lankan leopards, and 44 mammal species. It is one of the 70 Important Bird Areas in Sri Lanka, harbouring 215 bird species including six endemic species.",
 
-    "tours.day2.title": "Ella Highlands Day Escape",
-    "tours.day2.desc": "Mist-draped mountains, the iconic Nine Arch Bridge at sunrise, and a tea factory visit — Ella is pure magic and this tour captures all of it.",
+    "tours.day2.title": "Udawalawe National Park",
+    "tours.day2.desc": "Udawalawe National Park is located on the boundary of Sabaragamuwa and Uva Provinces in Sri Lanka. The park was created to provide a sanctuary for wild animals displaced by the construction of the Udawalawe Reservoir on the Walawe River, and to protect the reservoir’s catchment area. The reserve covers 30,821 hectares (119 sq mi) and was established on 30 June 1972.",
 
-    "tours.day3.title": "South Coast & Mirissa Beach",
-    "tours.day3.desc": "Spot blue whales off the southern coast, then spend the afternoon on the crescent sands of Mirissa with a fresh seafood lunch by the water.",
+    "tours.day3.title": "Whale Watching",
+    "tours.day3.desc": "Whale watching is the practice of observing whales and dolphins in their natural habitat. It is mostly a recreational activity, but it also serves scientific and educational purposes. In 2008, around 13 million people worldwide participated in whale watching. The industry generates approximately $2.1 billion annually in tourism revenue and employs around 13,000 people.",
 
-    "tours.day4.title": "Kandy Cultural Experience",
-    "tours.day4.desc": "Visit the sacred Temple of the Tooth Relic, stroll through the Royal Botanical Gardens, and end the evening with a traditional Kandyan dance show.",
+    "tours.day4.title": "Pinnawala Elephant Orphanage",
+    "tours.day4.desc": "Pinnawala Elephant Orphanage is a captive breeding and conservation institute for wild Asian elephants, located in Pinnawala village near Kegalle in Sri Lanka. It has the largest herd of captive elephants in the world. In 2023, 71 elephants from three generations were living at the orphanage.",
 
+    "tours.day5.title": "Colombo",
+    "tours.day5.desc": "Colombo is the largest city in Sri Lanka by population and the de facto commercial capital of the country. The metropolitan area has an estimated population of 5.6 million. It is the financial centre of the island and a major tourist destination located on the west coast.",
+
+    "tours.day6.title": "Bentota Estuary",
+    "tours.day6.desc": "Bentota is a coastal town in Sri Lanka, located in Galle District of the Southern Province. It is about 65 km south of Colombo and 56 km north of Galle. Bentota is situated on the southern bank of the Bentota River mouth, at an elevation of 3 metres above sea level.",
+
+    "tours.day7.title": "Kandy Cultural Experience",
+    "tours.day7.desc": "Kandy is a major city in the Central Province of Sri Lanka. It was the last capital of the Sinhalese monarchy under the Kingdom of Kandy from 1469 to 1818. The city is surrounded by hills and is considered the cultural capital of Sri Lanka. It is home to the Temple of the Tooth Relic, a UNESCO World Heritage Site declared in 1988.",
+
+    "tours.day8.title": "Turtle Hatchery",
+    "tours.day8.desc": "Located north of Hikkaduwa, the Sea Turtle Hatchery and Rescue Centre aims to conserve endangered turtle species. What started as a community project is now a fully operational hatchery and rescue centre dedicated to protecting several turtle species.",
+
+    "tours.day9.title": "Hikkaduwa",
+    "tours.day9.desc": "Hikkaduwa is a coastal area in south-west Sri Lanka, covering eleven villages over six kilometres along the ocean and three kilometres inland in Galle District.",
+    
     "tours.multi1.title": "Classic Sri Lanka — 7 Days",
     "tours.multi1.desc": "The ultimate Sri Lanka experience. Ancient kingdoms, misty hill country, wildlife safaris, and golden beaches — all in one perfectly paced week with your own private driver-guide.",
 
@@ -229,17 +245,32 @@ const translations = {
     "tours.per": "/ человек",
     "tours.book": "Забронировать",
 
-    "tours.day1.title": "Сигирия и Дамбулла",
-    "tours.day1.desc": "Поднимитесь на легендарную Львиную скалу и посетите золотые пещерные храмы Дамбуллы — два объекта ЮНЕСКО за один незабываемый день.",
+   "tours.day1.title": "Национальный парк Яла",
+    "tours.day1.desc": "Национальный парк Яла расположен в Шри-Ланке у побережья Индийского океана и занимает площадь 979 км². Основан как заповедник в 1900 году. Здесь представлены разнообразные экосистемы — от влажных муссонных лесов до пресноводных и морских болот. Парк важен для сохранения слонов Шри-Ланки, леопардов и 44 видов млекопитающих.",
 
-    "tours.day2.title": "Поездка в Эллу",
-    "tours.day2.desc": "Туманные горы, знаменитый Девятиарочный мост на рассвете и посещение чайной фабрики — Элла очаровывает каждого.",
+    "tours.day2.title": "Национальный парк Удавалаве",
+    "tours.day2.desc": "Национальный парк Удавалаве расположен на границе провинций Сабарагамува и Ува. Он был создан для защиты животных, переселённых из-за строительства водохранилища Удавалаве. Площадь заповедника составляет 30 821 гектар. Основан 30 июня 1972 года.",
 
-    "tours.day3.title": "Южное побережье и Мирисса",
-    "tours.day3.desc": "Наблюдение за синими китами у южного побережья и отдых на пляже Мириссы с обедом из свежих морепродуктов.",
+    "tours.day3.title": "Наблюдение за китами",
+    "tours.day3.desc": "Наблюдение за китами — это наблюдение за китами и дельфинами в естественной среде. Это популярная туристическая деятельность, а также научная и образовательная практика. Индустрия приносит около 2,1 млрд долларов ежегодно.",
 
-    "tours.day4.title": "Культурный Канди",
-    "tours.day4.desc": "Посещение Храма Зуба Будды, прогулка по Королевскому ботаническому саду и традиционное кандийское танцевальное шоу.",
+    "tours.day4.title": "Слоновий приют Пиннавела",
+    "tours.day4.desc": "Пиннавела — центр разведения и сохранения азиатских слонов в Шри-Ланке. Это крупнейшее в мире стадо слонов в неволе. В 2023 году здесь проживал 71 слон.",
+
+    "tours.day5.title": "Коломбо",
+    "tours.day5.desc": "Коломбо — крупнейший город Шри-Ланки и фактическая коммерческая столица страны. Это финансовый центр и популярное туристическое направление на западном побережье острова.",
+
+    "tours.day6.title": "Эстуарий Бентота",
+    "tours.day6.desc": "Бентота — прибрежный город в округе Галле. Он расположен в 65 км к югу от Коломбо на южном берегу устья реки Бентота.",
+
+    "tours.day7.title": "Культурный опыт Канди",
+    "tours.day7.desc": "Канди — крупный город в Центральной провинции. Он был последней столицей сингальского королевства. Здесь находится Храм Зуба Будды — объект Всемирного наследия ЮНЕСКО.",
+
+    "tours.day8.title": "Черепашья ферма",
+    "tours.day8.desc": "Центр по спасению морских черепах недалеко от Хиккадувы занимается охраной исчезающих видов черепах.",
+
+    "tours.day9.title": "Хиккадува",
+    "tours.day9.desc": "Хиккадува — прибрежный район на юго-западе Шри-Ланки, известный пляжами и коралловыми рифами.",
 
     "tours.multi1.title": "Классическая Шри-Ланка — 7 дней",
     "tours.multi1.desc": "Древние королевства, горные пейзажи, сафари и золотые пляжи — насыщенная неделя с личным водителем-гидом.",
@@ -380,17 +411,32 @@ const translations = {
     "tours.per": "/ Person",
     "tours.book": "Jetzt buchen",
 
-    "tours.day1.title": "Sigiriya & Dambulla Entdeckung",
-    "tours.day1.desc": "Erklimmen Sie die legendäre Löwenfelsen-Festung und besuchen Sie die goldenen Höhlentempel von Dambulla.",
+   "tours.day1.title": "Yala-Nationalpark",
+    "tours.day1.desc": "Der Yala-Nationalpark liegt in Sri Lanka am Indischen Ozean und umfasst 979 km². Er wurde 1900 als Wildschutzgebiet ausgewiesen. Der Park schützt Elefanten, Leoparden und zahlreiche Vogelarten.",
 
-    "tours.day2.title": "Ella Hochland Tour",
-    "tours.day2.desc": "Nebelberge, die berühmte Nine Arch Bridge bei Sonnenaufgang und eine Teefabrik — Ella ist pure Magie.",
+    "tours.day2.title": "Udawalawe-Nationalpark",
+    "tours.day2.desc": "Der Udawalawe-Nationalpark liegt an der Grenze der Provinzen Sabaragamuwa und Uva. Er wurde 1972 gegründet und dient dem Schutz wilder Tiere und des Stauseegebiets.",
 
-    "tours.day3.title": "Südküste & Mirissa Strand",
-    "tours.day3.desc": "Blauwale beobachten und Entspannung am Strand von Mirissa mit frischen Meeresfrüchten.",
+    "tours.day3.title": "Walbeobachtung",
+    "tours.day3.desc": "Walbeobachtung ist das Beobachten von Walen und Delfinen in ihrer natürlichen Umgebung. Es ist eine beliebte Freizeit- und Tourismusaktivität weltweit.",
 
-    "tours.day4.title": "Kulturelles Erlebnis in Kandy",
-    "tours.day4.desc": "Besuch des Zahntempels, Spaziergang durch den Botanischen Garten und traditionelle Tanzshow.",
+    "tours.day4.title": "Pinnawala-Elefantenwaisenhaus",
+    "tours.day4.desc": "Das Pinnawala-Elefantenwaisenhaus ist ein Schutz- und Zuchtzentrum für asiatische Elefanten in Sri Lanka und beherbergt die größte Elefantenherde in Gefangenschaft.",
+
+    "tours.day5.title": "Colombo",
+    "tours.day5.desc": "Colombo ist die größte Stadt Sri Lankas und das wirtschaftliche Zentrum des Landes an der Westküste.",
+
+    "tours.day6.title": "Bentota-Mündung",
+    "tours.day6.desc": "Bentota ist eine Küstenstadt im Distrikt Galle und liegt an der Mündung des Bentota-Flusses.",
+
+    "tours.day7.title": "Kulturelles Erlebnis in Kandy",
+    "tours.day7.desc": "Kandy war die letzte Hauptstadt des singhalesischen Königreichs und beherbergt den berühmten Zahntempel, ein UNESCO-Weltkulturerbe.",
+
+    "tours.day8.title": "Schildkröten-Aufzuchtstation",
+    "tours.day8.desc": "Die Schildkröten-Aufzuchtstation bei Hikkaduwa schützt gefährdete Meeresschildkrötenarten.",
+
+    "tours.day9.title": "Hikkaduwa",
+    "tours.day9.desc": "Hikkaduwa ist ein bekanntes Küstengebiet im Südwesten Sri Lankas mit Stränden und Korallenriffen.",
 
     "tours.multi1.title": "Klassisches Sri Lanka — 7 Tage",
     "tours.multi1.desc": "Antike Königreiche, Nebelberge, Safaris und goldene Strände in einer perfekt geplanten Woche.",
@@ -535,17 +581,32 @@ const translations = {
     "tours.per": "/ personne",
     "tours.book": "Réserver maintenant",
 
-    "tours.day1.title": "Sigiriya & Dambulla",
-    "tours.day1.desc": "Découvrez le Rocher du Lion et les temples d’or de Dambulla en une journée inoubliable.",
+     "tours.day1.title": "Parc national de Yala",
+    "tours.day1.desc": "Le parc national de Yala est situé au Sri Lanka, au bord de l’océan Indien. Il protège des éléphants, des léopards et de nombreuses espèces d’oiseaux.",
 
-    "tours.day2.title": "Escapade à Ella",
-    "tours.day2.desc": "Montagnes brumeuses, Nine Arch Bridge et plantation de thé — Ella est magique.",
+    "tours.day2.title": "Parc national d'Udawalawe",
+    "tours.day2.desc": "Le parc national d'Udawalawe a été créé en 1972 pour protéger les animaux sauvages et le réservoir d'Udawalawe.",
 
-    "tours.day3.title": "Côte Sud & Mirissa",
-    "tours.day3.desc": "Observation des baleines et détente sur la plage de Mirissa.",
+    "tours.day3.title": "Observation des baleines",
+    "tours.day3.desc": "L’observation des baleines consiste à observer les baleines et les dauphins dans leur habitat naturel. C’est une activité touristique populaire.",
 
-    "tours.day4.title": "Expérience culturelle à Kandy",
-    "tours.day4.desc": "Temple de la Dent, jardins botaniques et spectacle traditionnel.",
+    "tours.day4.title": "Orphelinat des éléphants de Pinnawala",
+    "tours.day4.desc": "L’orphelinat de Pinnawala est un centre de conservation et d’élevage d’éléphants asiatiques au Sri Lanka.",
+
+    "tours.day5.title": "Colombo",
+    "tours.day5.desc": "Colombo est la plus grande ville du Sri Lanka et son centre économique principal.",
+
+    "tours.day6.title": "Estuaire de Bentota",
+    "tours.day6.desc": "Bentota est une ville côtière située dans le district de Galle au Sri Lanka.",
+
+    "tours.day7.title": "Expérience culturelle à Kandy",
+    "tours.day7.desc": "Kandy est une ville historique du Sri Lanka, célèbre pour le Temple de la Dent, classé au patrimoine mondial de l’UNESCO.",
+
+    "tours.day8.title": "Centre de protection des tortues",
+    "tours.day8.desc": "Le centre de protection des tortues près de Hikkaduwa protège les espèces menacées.",
+
+    "tours.day9.title": "Hikkaduwa",
+    "tours.day9.desc": "Hikkaduwa est une région côtière populaire du sud-ouest du Sri Lanka.",
 
     "tours.multi1.title": "Sri Lanka Classique — 7 jours",
     "tours.multi1.desc": "Royaumes anciens, safaris et plages dorées en une semaine parfaite.",
@@ -683,17 +744,32 @@ const translations = {
     "tours.per": "/ persona",
     "tours.book": "Reservar ahora",
 
-    "tours.day1.title": "Sigiriya y Dambulla",
-    "tours.day1.desc": "Explora la Roca del León y los templos dorados de Dambulla en un solo día.",
+    "tours.day1.title": "Parque Nacional Yala",
+    "tours.day1.desc": "El Parque Nacional Yala está ubicado en Sri Lanka junto al océano Índico. Protege elefantes, leopardos y numerosas especies de aves.",
 
-    "tours.day2.title": "Escapada a Ella",
-    "tours.day2.desc": "Montañas con niebla, Nine Arch Bridge y fábrica de té.",
+    "tours.day2.title": "Parque Nacional Udawalawe",
+    "tours.day2.desc": "El Parque Nacional Udawalawe fue creado en 1972 para proteger la fauna salvaje y el embalse de Udawalawe.",
 
-    "tours.day3.title": "Costa Sur y Mirissa",
-    "tours.day3.desc": "Avistamiento de ballenas y descanso en la playa de Mirissa.",
+    "tours.day3.title": "Avistamiento de ballenas",
+    "tours.day3.desc": "El avistamiento de ballenas consiste en observar ballenas y delfines en su hábitat natural. Es una actividad turística muy popular.",
 
-    "tours.day4.title": "Experiencia Cultural en Kandy",
-    "tours.day4.desc": "Templo del Diente y espectáculo tradicional.",
+    "tours.day4.title": "Orfanato de Elefantes de Pinnawala",
+    "tours.day4.desc": "El Orfanato de Pinnawala es un centro de conservación y cría de elefantes asiáticos en Sri Lanka.",
+
+    "tours.day5.title": "Colombo",
+    "tours.day5.desc": "Colombo es la ciudad más grande de Sri Lanka y su principal centro comercial.",
+
+    "tours.day6.title": "Estuario de Bentota",
+    "tours.day6.desc": "Bentota es una ciudad costera ubicada en el distrito de Galle en Sri Lanka.",
+
+    "tours.day7.title": "Experiencia cultural en Kandy",
+    "tours.day7.desc": "Kandy es una ciudad histórica famosa por el Templo del Diente, Patrimonio de la Humanidad por la UNESCO.",
+
+    "tours.day8.title": "Centro de Tortugas",
+    "tours.day8.desc": "El centro de tortugas cerca de Hikkaduwa protege especies de tortugas en peligro de extinción.",
+
+    "tours.day9.title": "Hikkaduwa",
+    "tours.day9.desc": "Hikkaduwa es una zona costera popular en el suroeste de Sri Lanka.",
 
     "tours.multi1.title": "Sri Lanka Clásico — 7 días",
     "tours.multi1.desc": "Reinos antiguos, safaris y playas doradas en una semana perfecta.",

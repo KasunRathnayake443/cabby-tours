@@ -80,7 +80,7 @@ body {
 }
 
 .logo-icon {
-  width:80px;
+  width:70px;
   height: 100%;
   border-radius: 12px;
   display: flex;
@@ -630,6 +630,13 @@ body {
   background: linear-gradient(90deg, var(--green-bright), var(--green-light));
   width: 0%;
   transition: width linear;
+}
+
+@media (max-width: 1600px)  {
+  .slide-title {
+     font-size: clamp(1.8rem, 4.5vw, 3.5rem);
+  }
+  
 }
 
 /* =============================================
