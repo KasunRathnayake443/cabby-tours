@@ -457,6 +457,98 @@ if (lightbox) {
 }
 
 
+// ─── CONTACT FORM ────────────────────────────
+const contactForm    = document.getElementById('contactForm');
+const btnSubmit      = document.getElementById('btn-submit');
+const formPopup      = document.getElementById('form-popup');
+const formBackdrop   = document.getElementById('form-popup-backdrop');
+const btnPopupClose  = document.getElementById('btn-popup-close');
+const formErrorRow   = document.getElementById('form-error-row');
+const formErrorMsg   = document.getElementById('form-error-msg');
+const formPopupMeta  = document.getElementById('form-popup-meta');
+
+function showFormError(msg) {
+  formErrorMsg.textContent = msg;
+  formErrorRow.style.display = 'block';
+  formErrorRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function hideFormError() {
+  formErrorRow.style.display = 'none';
+}
+
+function setLoading(on) {
+  const label   = btnSubmit.querySelector('.btn-submit-label');
+  const arrow   = btnSubmit.querySelector('.btn-submit-arrow');
+  const spinner = btnSubmit.querySelector('.btn-submit-spinner');
+  btnSubmit.disabled    = on;
+  label.textContent     = on ? 'Sending...' : 'Send message';
+  arrow.style.display   = on ? 'none' : '';
+  spinner.style.display = on ? 'inline-block' : 'none';
+}
+
+function openPopup(name, email) {
+  if (formPopupMeta) {
+    formPopupMeta.textContent = `✓ Confirmation sent to ${email}`;
+    formPopupMeta.classList.add('visible');
+  }
+  formPopup.classList.add('active');
+  formBackdrop.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePopup() {
+  formPopup.classList.remove('active');
+  formBackdrop.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    hideFormError();
+
+    const name    = contactForm.querySelector('#name').value.trim();
+    const email   = contactForm.querySelector('#email').value.trim();
+    const message = contactForm.querySelector('#message').value.trim();
+
+    if (!name || !email || !message) {
+      showFormError('Please fill in all required fields.');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch('send-mail.php', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        contactForm.reset();
+        openPopup(name, email);
+      } else {
+        showFormError(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      showFormError('Could not connect to the server. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  });
+}
+
+if (btnPopupClose)  btnPopupClose.addEventListener('click', closePopup);
+if (formBackdrop)   formBackdrop.addEventListener('click', closePopup);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && formPopup?.classList.contains('active')) closePopup();
+});
+
 // ─── FOOTER YEAR ─────────────────────────────
 const yearEl = document.getElementById('footer-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
