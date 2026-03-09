@@ -136,7 +136,7 @@ const translations = {
     "contact.infoTitle2": "Tours",
 
     "contact.addressTitle": "Head Office",
-    "contact.address": "24 Galle Road, Colombo 03,<br>Sri Lanka",
+    "contact.address": "No 54/C \"Saman\" Galle Road,<br>Ahungalla, Sri Lanka (80562)",
 
     "contact.phoneTitle": "Give us a call",
     "contact.emailTitle": "Email",
@@ -310,7 +310,7 @@ const translations = {
     "contact.infoTitle2": "Tours",
 
     "contact.addressTitle": "Главный офис",
-    "contact.address": "24 Galle Road, Colombo 03,<br>Шри-Ланка",
+    "contact.address": "No 54/C \"Saman\" Galle Road,<br>Ahungalla, Sri Lanka (80562)",
 
     "contact.phoneTitle": "Позвоните нам",
     "contact.emailTitle": "Электронная почта",
@@ -480,7 +480,7 @@ const translations = {
     "contact.infoTitle2": "Tours",
 
     "contact.addressTitle": "Hauptbüro",
-    "contact.address": "24 Galle Road, Colombo 03,<br>Sri Lanka",
+    "contact.address": "No 54/C \"Saman\" Galle Road,<br>Ahungalla, Sri Lanka (80562)",
 
     "contact.phoneTitle": "Rufen Sie uns an",
     "contact.emailTitle": "E-Mail",
@@ -655,7 +655,7 @@ const translations = {
     "contact.infoTitle2": "Tours",
 
     "contact.addressTitle": "Bureau principal",
-    "contact.address": "24 Galle Road, Colombo 03,<br>Sri Lanka",
+    "contact.address": "No 54/C \"Saman\" Galle Road,<br>Ahungalla, Sri Lanka (80562)",
 
     "contact.phoneTitle": "Appelez-nous",
     "contact.emailTitle": "E-mail",
@@ -822,7 +822,7 @@ const translations = {
     "contact.infoTitle2": "Tours",
 
     "contact.addressTitle": "Oficina principal",
-    "contact.address": "24 Galle Road, Colombo 03,<br>Sri Lanka",
+    "contact.address": "No 54/C \"Saman\" Galle Road,<br>Ahungalla, Sri Lanka (80562)",
 
     "contact.phoneTitle": "Llámanos",
     "contact.emailTitle": "Correo electrónico",
