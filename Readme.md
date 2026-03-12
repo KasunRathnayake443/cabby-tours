@@ -1,0 +1,1 @@
+Update .env file with working mail host details for contact form. 
